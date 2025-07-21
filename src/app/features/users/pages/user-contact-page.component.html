@@ -1,0 +1,8 @@
+<div *ngIf="loading">Loading contact info...</div>
+<div *ngIf="error">{{ error }}</div>
+<div *ngIf="user && !loading">
+  <h2>User Contact</h2>
+  <p><strong>Email:</strong> {{ user.email }}</p>
+  <p *ngIf="user.phone"><strong>Phone:</strong> {{ user.phone }}</p>
+  <a [routerLink]="['/users', user.id]">Back to detail</a>
+</div>
