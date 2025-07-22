@@ -4,6 +4,7 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 import { GetUserDetailUseCase } from '../application/use-cases/get-user-detail.usecase';
 import { UserApiService } from '../infrastructure/services/user-api.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { tap } from 'rxjs';
 
 
 @Component({
@@ -35,16 +36,32 @@ export class UserEditPageComponent implements OnInit{
 
   ngOnInit(): void {
     this.userId = Number(this.route.snapshot.paramMap.get('id'));
-    this.getUserDetail.execute(this.userId).subscribe({
-      next: (user) => {
-        console.log(user, '=')
-        this.userForm.patchValue(user);
-      },
-      error: () => {
-        this.snackBar.open('User not found.', 'Close', { duration: 3000 })
-        this.router.navigate(['/users']);
-      }
-    });
+    // this.getUserDetail.execute(this.userId).subscribe({
+    //   next: (user) => {
+    //     console.log(user, '=')
+    //     this.userForm.patchValue(user);
+    //   },
+    //   error: () => {
+    //     this.snackBar.open('User not found.', 'Close', { duration: 3000 })
+    //     this.router.navigate(['/users']);
+    //   }
+    // });
+
+    // refactor using pipe and subscribe
+    this.getUserDetail
+      .execute(this.userId)
+      .pipe(
+        tap((user) => {
+          console.log(user, '= user get detail');
+          this.userForm.patchValue(user);
+        })
+      )
+      .subscribe({
+        error: () => {
+          this.snackBar.open('User not found.', 'Close', { duration: 3000 })
+          this.router.navigate(['/users']);
+        }
+      });
   }
 
   onSubmit() {
