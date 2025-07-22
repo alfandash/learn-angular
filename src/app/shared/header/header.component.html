@@ -1,1 +1,3 @@
 <mat-toolbar color="primary">My App</mat-toolbar>
+<button *ngIf="loggedIn" (click)="logout()">Logout</button>
+<button *ngIf="!loggedIn" (click)="login()">Login</button>

@@ -11,7 +11,13 @@ import { UserEditPageComponent } from './pages/user-edit-page.component';
 
 
 @NgModule({
-  declarations: [UserPageComponent, UserDetailPageComponent, UserContactPageComponent, UserCreatePageComponent, UserEditPageComponent],
+  declarations: [
+    UserPageComponent,
+    UserDetailPageComponent,
+    UserContactPageComponent,
+    UserCreatePageComponent,
+    UserEditPageComponent,
+  ],
   imports: [
     CommonModule,
     UsersRoutingModule,
