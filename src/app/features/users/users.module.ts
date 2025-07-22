@@ -7,10 +7,11 @@ import { UserContactPageComponent } from './pages/user-contact-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserCreatePageComponent } from './pages/user-create-page.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { UserEditPageComponent } from './pages/user-edit-page.component';
 
 
 @NgModule({
-  declarations: [UserPageComponent, UserDetailPageComponent, UserContactPageComponent, UserCreatePageComponent],
+  declarations: [UserPageComponent, UserDetailPageComponent, UserContactPageComponent, UserCreatePageComponent, UserEditPageComponent],
   imports: [
     CommonModule,
     UsersRoutingModule,

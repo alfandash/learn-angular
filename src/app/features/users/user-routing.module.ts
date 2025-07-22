@@ -4,12 +4,14 @@ import { UserPageComponent } from './pages/user-page.component';
 import { UserDetailPageComponent } from './pages/user-detail-page.component';
 import { UserContactPageComponent } from './pages/user-contact-page.component';
 import { UserCreatePageComponent } from './pages/user-create-page.component';
+import { UserEditPageComponent } from './pages/user-edit-page.component';
 
 const routes: Routes = [
   { path: '', component: UserPageComponent },
   { path: 'create', component: UserCreatePageComponent},
   { path: ':id', component: UserDetailPageComponent },
-  { path: ':id/contact', component: UserContactPageComponent }
+  { path: ':id/contact', component: UserContactPageComponent },
+  { path: ':id/edit', component: UserEditPageComponent }
 ];
 
 @NgModule({
