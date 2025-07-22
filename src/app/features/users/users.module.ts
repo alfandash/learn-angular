@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UserCreatePageComponent } from './pages/user-create-page.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { UserEditPageComponent } from './pages/user-edit-page.component';
+import { UserListComponent } from './pages/user-list.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { UserEditPageComponent } from './pages/user-edit-page.component';
     UserContactPageComponent,
     UserCreatePageComponent,
     UserEditPageComponent,
+    UserListComponent
   ],
   imports: [
     CommonModule,

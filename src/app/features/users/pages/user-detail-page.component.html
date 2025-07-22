@@ -6,6 +6,6 @@
   <p><strong>Email:</strong> {{ user.email }}</p>
   <p *ngIf="user.phone"><strong>Phone:</strong> {{ user.phone }}</p>
   <a [routerLink]="['/users', user.id, 'contact']">View contact info</a> |
-  <a [routerLink]="['/users', user.id, 'edit']">Edit User</a>
+  <a [routerLink]="['/users', user.id, 'edit']">Edit User</a> |
   <a routerLink="/users">Back to list</a>
 </div>

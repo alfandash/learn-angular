@@ -1,6 +1,17 @@
 <h2>Users</h2>
-<ul>
+<!-- <ul>
   <li *ngFor="let user of users">
     <a [routerLink]="['/users', user.id]">{{ user.name }}</a>
   </li>
-</ul>
+</ul> -->
+
+<app-user-list [userss]="users" (userSelected)="onUserSelected($event)"></app-user-list>
+
+
+<div *ngIf="selectedUser">
+  <h3>Selected user:</h3>
+  <p>Name: {{ selectedUser.name}}</p>
+  <p>Email: {{ selectedUser.email}}</p>
+   <a [routerLink]="['/users', selectedUser.id]">detail</a>
+
+</div>

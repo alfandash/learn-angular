@@ -9,6 +9,7 @@ import { User } from "../domain/models/user.model";
 
 export class UserPageComponent implements OnInit {
   users: User[]=[];
+  selectedUser: User | null = null;
 
   constructor(private getUserList: GetUserListUseCase) {}
 
@@ -22,5 +23,9 @@ export class UserPageComponent implements OnInit {
         console.error('Error fetching users:', err);
       }
     });
+  }
+
+  onUserSelected(user: User) {
+    this.selectedUser = user
   }
 }
