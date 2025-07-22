@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { IsAuthenticatedUseCase } from 'src/app/features/users/application/use-cases/is-authenticated.usecase';
-import { LogoutUseCase } from 'src/app/features/users/application/use-cases/logout.usecase';
+import { IsAuthenticatedUseCase } from 'src/app/features/auth/application/use-cases/is-authenticated.usecase';
+import { LogoutUseCase } from 'src/app/features/auth/application/use-cases/logout.usecase';
 
 @Component({
   selector: 'app-header',

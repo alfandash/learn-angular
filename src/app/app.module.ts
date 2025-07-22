@@ -12,17 +12,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
-import { AuthInterceptor } from './features/users/infrastructure/services/auth.interceptor';
-import { LoginPageComponent } from './features/users/pages/login-page.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { AuthInterceptor } from './features/auth/infrastructure/services/auth.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    AboutComponent,
-    LoginPageComponent
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -32,8 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatCardModule,
     MatButtonModule,
-    MatToolbarModule,
-    ReactiveFormsModule
+    MatToolbarModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }

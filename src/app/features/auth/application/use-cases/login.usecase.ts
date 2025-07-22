@@ -14,10 +14,6 @@ export class LoginUseCase {
   ){}
 
   execute(credentials: UserCredentials): Observable<AuthToken> {
-    // because return observable it can chain so prefer using pipe
-    // return this.authApi.login(credentials).subscribe({
-    //   next: token => this.tokenStorage.setToken(token.accessToken)
-    // })
     return this.authApi.login(credentials).pipe(
       tap(token => this.tokenStorage.setToken(token.accessToken))
     )
