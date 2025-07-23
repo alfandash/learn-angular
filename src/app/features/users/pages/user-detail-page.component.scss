@@ -1,0 +1,20 @@
+.detail-container {
+  padding: 24px;
+}
+
+mat-card {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+mat-card-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.error-message {
+  text-align: center;
+  margin-top: 24px;
+  color: red;
+}

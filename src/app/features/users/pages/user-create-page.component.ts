@@ -7,6 +7,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-user-create-page',
   templateUrl: './user-create-page.component.html',
+  styleUrls: ['./user-create-page.component.scss']
 })
 export class UserCreatePageComponent {
 
@@ -21,7 +22,7 @@ export class UserCreatePageComponent {
   ) {
    this.userForm = this.fb.group({
     name: ['', Validators.required],
-    email: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
     phone: [''],
    });
   }

@@ -1,3 +1,12 @@
-<mat-toolbar color="primary">My App</mat-toolbar>
-<button *ngIf="loggedIn" (click)="logout()">Logout</button>
-<button *ngIf="!loggedIn" (click)="login()">Login</button>
+<mat-toolbar color="primary">
+  <span>My App</span>
+  <a mat-button routerLink="/">Home</a>
+  <a mat-button routerLink="/about">About</a>
+  <a mat-button routerLink="/users">Users</a>
+  <a mat-button routerLink="/users/create">Create User</a>
+
+  <span class="spacer"></span>
+
+  <button mat-stroked-button *ngIf="loggedIn" (click)="logout()">Logout</button>
+  <button mat-stroked-button *ngIf="!loggedIn" (click)="login()">Login</button>
+</mat-toolbar>

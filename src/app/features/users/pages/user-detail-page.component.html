@@ -1,11 +1,23 @@
-<div *ngIf="loading">Loading user...</div>
-<div *ngIf="error">{{ error }}</div>
-<div *ngIf="user && !loading">
-  <h2>User Detail</h2>
-  <p><strong>Name:</strong> {{ user.name }}</p>
-  <p><strong>Email:</strong> {{ user.email }}</p>
-  <p *ngIf="user.phone"><strong>Phone:</strong> {{ user.phone }}</p>
-  <a [routerLink]="['/users', user.id, 'contact']">View contact info</a> |
-  <a [routerLink]="['/users', user.id, 'edit']">Edit User</a> |
-  <a routerLink="/users">Back to list</a>
+<div class="detail-container">
+  <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+
+  <mat-card *ngIf="user && !loading">
+    <mat-card-header>
+      <mat-card-title>{{ user.name }}</mat-card-title>
+      <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p *ngIf="user.phone"><strong>Phone:</strong> {{ user.phone }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-stroked-button color="primary" [routerLink]="['/users', user.id, 'contact']">View Contact</a>
+      <a mat-stroked-button [routerLink]="['/users', user.id, 'edit']">Edit User</a>
+      <a mat-button routerLink="/users">Back to List</a>
+    </mat-card-actions>
+  </mat-card>
+
+  <div *ngIf="error" class="error-message">
+    <p>{{ error }}</p>
+    <a mat-button routerLink="/users">Go Back</a>
+  </div>
 </div>

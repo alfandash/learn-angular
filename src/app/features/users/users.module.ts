@@ -8,7 +8,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UserCreatePageComponent } from './pages/user-create-page.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { UserEditPageComponent } from './pages/user-edit-page.component';
-import { UserListComponent } from './pages/user-list.component';
+import { UserListComponent } from './components/user-list.component';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -24,7 +31,14 @@ import { UserListComponent } from './pages/user-list.component';
     CommonModule,
     UsersRoutingModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatListModule,
+    MatIconModule,
+    MatProgressBarModule,
+    MatCardModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ]
 })
 export class UsersModule { }

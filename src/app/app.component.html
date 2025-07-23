@@ -1,10 +1,4 @@
 <app-header></app-header>
-
-<nav>
-  <a routerLink="/">Home</a> |
-  <a routerLink="/about">About</a> |
-  <a routerLink="/users">Users</a> |
-  <a routerLink="/users/create">Create User</a>
-</nav>
-<hr />
-<router-outlet></router-outlet>
+<main [@triggerName]="getRouteAnimationData()">
+  <router-outlet></router-outlet>
+</main>

@@ -5,13 +5,14 @@ import { AboutComponent } from './pages/about/about.component';
 import { AuthGuard } from './features/auth/infrastructure/services/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
+  { path: '', component: HomeComponent, data: { animation: 'One' } },
+  { path: 'about', component: AboutComponent, data: { animation: 'Two' } },
   {
     path: 'users',
     canActivate: [AuthGuard],
     loadChildren: () =>
       import('./features/users/users.module').then((m) => m.UsersModule),
+    data: { animation: 'Three' }
   },
   {
     path: '',
